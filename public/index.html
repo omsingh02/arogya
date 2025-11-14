@@ -462,152 +462,12 @@
           </div>
         </div>
 
-        <!-- Appointments Page -->
-        <div id="appointmentsPage" class="hidden fade-in">
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-3">
-              <button onclick="hideAppointmentsPage()" class="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
-              </button>
-              <h2 class="text-2xl font-bold text-slate-900">My Appointments</h2>
-            </div>
-          </div>
-
-          <!-- Tabs -->
-          <div class="flex gap-4 mb-6 border-b border-slate-200">
-            <button onclick="switchAppointmentTab('upcoming')" id="upcomingTab" class="pb-3 px-2 font-medium text-teal-600 border-b-2 border-teal-600 transition-colors">
-              Upcoming
-            </button>
-            <button onclick="switchAppointmentTab('past')" id="pastTab" class="pb-3 px-2 font-medium text-slate-500 hover:text-slate-700 transition-colors">
-              Past
-            </button>
-          </div>
-
-          <!-- Upcoming Appointments -->
-          <div id="upcomingAppointments" class="space-y-4">
-            <!-- Will be populated dynamically -->
-            <div class="text-center py-12">
-              <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-              </svg>
-              <p class="text-slate-500 mb-4">No upcoming appointments</p>
-              <button onclick="hideAppointmentsPage()" class="bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
-                Book New Appointment
-              </button>
-            </div>
-          </div>
-
-          <!-- Past Appointments -->
-          <div id="pastAppointments" class="hidden space-y-4">
-            <!-- Will be populated dynamically -->
-            <div class="text-center py-12">
-              <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <p class="text-slate-500">No past appointments</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Profile Page -->
-        <div id="profilePage" class="hidden fade-in">
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-3">
-              <button onclick="hideProfilePage()" class="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
-              </button>
-              <h2 class="text-2xl font-bold text-slate-900">Profile Settings</h2>
-            </div>
-          </div>
-
-          <!-- Profile Info -->
-          <div class="bg-white border border-slate-200 rounded-lg p-6 mb-4">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 text-2xl font-bold">
-                <span id="profileInitials">U</span>
-              </div>
-              <div class="flex-1">
-                <h3 class="text-xl font-semibold text-slate-900" id="profileName">User Name</h3>
-                <p class="text-sm text-slate-600" id="profileEmail">user@example.com</p>
-              </div>
-              <button onclick="editProfile()" class="text-teal-600 hover:text-teal-700 font-medium text-sm">
-                Edit
-              </button>
-            </div>
-
-            <div class="space-y-3 text-sm">
-              <div class="flex justify-between py-2 border-b border-slate-100">
-                <span class="text-slate-600">Phone</span>
-                <span class="font-medium text-slate-900" id="profilePhone">+91 XXXXX XXXXX</span>
-              </div>
-              <div class="flex justify-between py-2 border-b border-slate-100">
-                <span class="text-slate-600">Age</span>
-                <span class="font-medium text-slate-900" id="profileAge">--</span>
-              </div>
-              <div class="flex justify-between py-2 border-b border-slate-100">
-                <span class="text-slate-600">Gender</span>
-                <span class="font-medium text-slate-900" id="profileGender">--</span>
-              </div>
-              <div class="flex justify-between py-2">
-                <span class="text-slate-600">Member Since</span>
-                <span class="font-medium text-slate-900" id="profileMemberSince">Nov 2025</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Quick Actions -->
-          <div class="space-y-3 mb-4">
-            <button onclick="viewMedicalHistory()" class="w-full flex items-center justify-between p-4 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
-              <div class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                </svg>
-                <span class="font-medium text-slate-700">Medical History</span>
-              </div>
-              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-
-            <button onclick="managePaymentMethods()" class="w-full flex items-center justify-between p-4 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
-              <div class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                </svg>
-                <span class="font-medium text-slate-700">Payment Methods</span>
-              </div>
-              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-
-            <button onclick="showNotificationSettings()" class="w-full flex items-center justify-between p-4 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
-              <div class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                </svg>
-                <span class="font-medium text-slate-700">Notifications</span>
-              </div>
-              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Logout -->
-          <button onclick="logout()" class="w-full p-4 bg-red-50 text-red-600 font-medium rounded-lg hover:bg-red-100 transition-colors flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
-            </svg>
-            Logout
-          </button>
-        </div>
-
       </main>
+
+      <!-- Bottom Fixed Section -->
+      <div class="bottom-fixed-section flex-shrink-0 bg-white border-t border-slate-200 shadow-2xl">
+
+
 
       <!-- Bottom Fixed Section -->
       <div class="bottom-fixed-section flex-shrink-0 bg-white border-t border-slate-200 shadow-2xl">
@@ -684,6 +544,159 @@
           <div id="verificationStepsList" class="space-y-4">
             <!-- Steps will be inserted dynamically -->
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Appointments Modal -->
+    <div id="appointmentsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div class="bg-white rounded-xl max-w-2xl w-full slide-up shadow-2xl" style="max-height: 85vh; overflow-y: auto;">
+        <div class="sticky top-0 bg-white border-b border-slate-200 p-6 rounded-t-xl flex items-center justify-between">
+          <h2 class="text-2xl font-bold text-slate-900">My Appointments</h2>
+          <button onclick="hideAppointmentsPage()" class="p-2 hover:bg-slate-100 rounded-lg transition-colors">
+            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="p-6">
+          <!-- Tabs -->
+          <div class="flex gap-4 mb-6 border-b border-slate-200">
+            <button onclick="switchAppointmentTab('upcoming')" id="upcomingTab" class="pb-3 px-2 font-medium text-teal-600 border-b-2 border-teal-600 transition-colors">
+              Upcoming
+            </button>
+            <button onclick="switchAppointmentTab('past')" id="pastTab" class="pb-3 px-2 font-medium text-slate-500 hover:text-slate-700 transition-colors">
+              Past
+            </button>
+          </div>
+
+          <!-- Upcoming Appointments -->
+          <div id="upcomingAppointments" class="space-y-4">
+            <!-- Will be populated dynamically -->
+            <div class="text-center py-12">
+              <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              <p class="text-slate-500 mb-4">No upcoming appointments</p>
+              <button onclick="hideAppointmentsPage()" class="bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                Book New Appointment
+              </button>
+            </div>
+          </div>
+
+          <!-- Past Appointments -->
+          <div id="pastAppointments" class="hidden space-y-4">
+            <!-- Will be populated dynamically -->
+            <div class="text-center py-12">
+              <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <p class="text-slate-500">No past appointments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div class="bg-white rounded-xl max-w-lg w-full slide-up shadow-2xl" style="max-height: 85vh; overflow-y: auto;">
+        <div class="sticky top-0 bg-white border-b border-slate-200 p-6 rounded-t-xl flex items-center justify-between">
+          <h2 class="text-2xl font-bold text-slate-900">Profile</h2>
+          <button onclick="hideProfilePage()" class="p-2 hover:bg-slate-100 rounded-lg transition-colors">
+            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="p-6">
+          <!-- Profile Info -->
+          <div class="bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-xl p-6 mb-6">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                <span id="profileInitials">U</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-slate-900" id="profileName">User Name</h3>
+                <p class="text-sm text-slate-600" id="profileEmail">user@example.com</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3 text-center">
+              <div class="bg-white rounded-lg p-3">
+                <p class="text-xs text-slate-500 mb-1">Age</p>
+                <p class="font-semibold text-slate-900" id="profileAge">--</p>
+              </div>
+              <div class="bg-white rounded-lg p-3">
+                <p class="text-xs text-slate-500 mb-1">Gender</p>
+                <p class="font-semibold text-slate-900" id="profileGender">--</p>
+              </div>
+              <div class="bg-white rounded-lg p-3">
+                <p class="text-xs text-slate-500 mb-1">Member</p>
+                <p class="font-semibold text-slate-900" id="profileMemberSince">Nov 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6">
+            <h4 class="font-semibold text-slate-900 mb-3">Contact Information</h4>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <span class="text-slate-600" id="profilePhone">+91 XXXXX XXXXX</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <span class="text-slate-600" id="profileEmailContact">user@example.com</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="space-y-2 mb-6">
+            <button onclick="editProfile()" class="w-full flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-lg hover:border-teal-500 hover:bg-teal-50 transition-colors">
+              <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+              </svg>
+              <span class="font-medium text-slate-700">Edit Profile</span>
+            </button>
+
+            <button onclick="viewMedicalHistory()" class="w-full flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-lg hover:border-teal-500 hover:bg-teal-50 transition-colors">
+              <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <span class="font-medium text-slate-700">Medical History</span>
+            </button>
+
+            <button onclick="managePaymentMethods()" class="w-full flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-lg hover:border-teal-500 hover:bg-teal-50 transition-colors">
+              <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+              </svg>
+              <span class="font-medium text-slate-700">Payment Methods</span>
+            </button>
+
+            <button onclick="showNotificationSettings()" class="w-full flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-lg hover:border-teal-500 hover:bg-teal-50 transition-colors">
+              <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+              </svg>
+              <span class="font-medium text-slate-700">Notifications</span>
+            </button>
+          </div>
+
+          <!-- Logout -->
+          <button onclick="logout()" class="w-full p-4 bg-red-50 text-red-600 font-medium rounded-lg hover:bg-red-100 transition-colors flex items-center justify-center gap-2 border border-red-200">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+            Logout
+          </button>
         </div>
       </div>
     </div>

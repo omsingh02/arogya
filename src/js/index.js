@@ -1203,33 +1203,15 @@ END:VCALENDAR`;
 // PROFILE & APPOINTMENTS NAVIGATION
 // ============================================
 function showProfilePage() {
-  // Hide main booking interface
-  document.getElementById('welcomeScreen').classList.add('hidden');
-  document.getElementById('conversationArea').classList.add('hidden');
-  document.getElementById('entitySection').classList.add('hidden');
-  document.getElementById('specialtySection').classList.add('hidden');
-  document.getElementById('hospitalSection').classList.add('hidden');
-  document.getElementById('slotSection').classList.add('hidden');
-  document.getElementById('patientInfoSection').classList.add('hidden');
-  document.getElementById('paymentSection').classList.add('hidden');
-  document.getElementById('confirmationScreen').classList.add('hidden');
-  document.getElementById('appointmentsPage').classList.add('hidden');
-  document.getElementById('voiceInputSection').classList.add('hidden');
-  
-  // Show profile page
-  document.getElementById('profilePage').classList.remove('hidden');
+  // Show profile modal
+  document.getElementById('profileModal').classList.remove('hidden');
   
   // Load profile data
   loadProfileData();
-  
-  scrollToTop();
 }
 
 function hideProfilePage() {
-  document.getElementById('profilePage').classList.add('hidden');
-  document.getElementById('welcomeScreen').classList.remove('hidden');
-  document.getElementById('voiceInputSection').classList.remove('hidden');
-  updateMainContentAlignment();
+  document.getElementById('profileModal').classList.add('hidden');
 }
 
 function loadProfileData() {
@@ -1253,6 +1235,9 @@ function loadProfileData() {
   // Set initials
   const initials = appState.userProfile.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
   document.getElementById('profileInitials').textContent = initials;
+  
+  // Update email in contact section
+  document.getElementById('profileEmailContact').textContent = appState.userProfile.email;
 }
 
 function editProfile() {
@@ -1290,33 +1275,15 @@ function logout() {
 }
 
 function showAppointmentsPage() {
-  // Hide main booking interface
-  document.getElementById('welcomeScreen').classList.add('hidden');
-  document.getElementById('conversationArea').classList.add('hidden');
-  document.getElementById('entitySection').classList.add('hidden');
-  document.getElementById('specialtySection').classList.add('hidden');
-  document.getElementById('hospitalSection').classList.add('hidden');
-  document.getElementById('slotSection').classList.add('hidden');
-  document.getElementById('patientInfoSection').classList.add('hidden');
-  document.getElementById('paymentSection').classList.add('hidden');
-  document.getElementById('confirmationScreen').classList.add('hidden');
-  document.getElementById('profilePage').classList.add('hidden');
-  document.getElementById('voiceInputSection').classList.add('hidden');
-  
-  // Show appointments page
-  document.getElementById('appointmentsPage').classList.remove('hidden');
+  // Show appointments modal
+  document.getElementById('appointmentsModal').classList.remove('hidden');
   
   // Load appointments
   loadAppointments();
-  
-  scrollToTop();
 }
 
 function hideAppointmentsPage() {
-  document.getElementById('appointmentsPage').classList.add('hidden');
-  document.getElementById('welcomeScreen').classList.remove('hidden');
-  document.getElementById('voiceInputSection').classList.remove('hidden');
-  updateMainContentAlignment();
+  document.getElementById('appointmentsModal').classList.add('hidden');
 }
 
 function loadAppointments() {
